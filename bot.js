@@ -23,7 +23,7 @@ client.on("ready", () => {
 client.login(process.env.TOKEN);
 
 lient.on("ready", () => {
-  console.log(client.user.tag + " Ready! (" + client.guilds.get(Guild).name + ', ' + client.guilds.get(Guild).channels.get(voiceChannel).name + ')');
+  console.log(client2.user.tag + " Ready! (" + client.guilds.get(Guild).name + ', ' + client.guilds.get(Guild).channels.get(voiceChannel).name + ')');
   client.channels.get(voiceChannel).join().then(connection => {
     console.log(client.user.tag + " Successfully connection.");
     setInterval(() => {
