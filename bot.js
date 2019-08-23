@@ -22,19 +22,5 @@ client.on("ready", () => {
 
 client.login(process.env.TOKEN);
 
-lient.on("ready", () => {
-  console.log(client2.user.tag + " Ready! (" + client.guilds.get(Guild).name + ', ' + client.guilds.get(Guild).channels.get(voiceChannel).name + ')');
-  client.channels.get(voiceChannel).join().then(connection => {
-    console.log(client.user.tag + " Successfully connection.");
-    setInterval(() => {
-      if(!client.guilds.get(Guild).members.get(client.user.id).voiceChannel || client.guilds.get(Guild).members.get(client.user.id).voiceChannel && client.guilds.get(Guild).members.get(client.user.id).voiceChannelID != voiceChannel) {
-        client.channels.get(voiceChannel).join().then(connection => {
-          console.log(client.user.tag + " Successfully connection.");
-        });
-      }
-    }, 5000);
-  });
-});
 
-client.login(process.env.TOKEN2);
 
