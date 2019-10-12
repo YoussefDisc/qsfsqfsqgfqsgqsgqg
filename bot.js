@@ -1,22 +1,13 @@
-const Discord = require("discord.js");
-
-const client = new Discord.Client();
-const client2 = new Discord.Client();
-
-const Guild = "211543198651121664";
-const voiceChannel = "613749249968046123";
+const Discord = require('discord.js');
+const client = new Discord.Client(); 
 
 client.on("ready", () => {
-  console.log(client.user.tag + " Ready! (" + client.guilds.get(Guild).name + ', ' + client.guilds.get(Guild).channels.get(voiceChannel).name + ')');
-  client.channels.get(voiceChannel).join().then(connection => {
-    console.log(client.user.tag + " Successfully connection.");
-    setInterval(() => {
-      if(!client.guilds.get(Guild).members.get(client.user.id).voiceChannel || client.guilds.get(Guild).members.get(client.user.id).voiceChannel && client.guilds.get(Guild).members.get(client.user.id).voiceChannelID != voiceChannel) {
-        client.channels.get(voiceChannel).join().then(connection => {
-          console.log(client.user.tag + " Successfully connection.");
-        });
-      }
-    }, 5000);
+  console.log(client.user.tag + " Ready!");
+  const channel = client.channels.get("613749249968046123");
+  channel.join().then(connection => {
+    console.log("Successfully connected.");
+  }).catch(e => {
+    console.error(e);
   });
 });
 
